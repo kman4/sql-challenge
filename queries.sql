@@ -2,9 +2,9 @@
 
 select employee.emp_no as " Employee Number",
        employee.last_name as "Last Name",
-	   employee.first_name as "First Name",
-	   employee.sex as "Sex" ,
-	   salaries.salary as "Salary"
+       employee.first_name as "First Name",
+       employee.sex as "Sex" ,
+       salaries.salary as "Salary"
 from employee, salaries
 where employee.emp_no = salaries.emp_no
 order by employee.last_name ASC;
@@ -19,8 +19,8 @@ order by to_date ASC;
 
 select department.dept_no as " Department Number",
        department.dept_name as "Department Name",
-	   department_mgr.emp_no as "Manager's Employee Number",
-	   employee.last_name as "Last Name",
+       department_mgr.emp_no as "Manager's Employee Number",
+       employee.last_name as "Last Name",
        employee.first_name as "First Name"  
 from  department,department_mgr, employee
 where department.dept_no = department_mgr.dept_no  and  department_mgr.emp_no = employee.emp_no
@@ -30,9 +30,9 @@ order by employee.last_name ASC;
 -- List the department of each employee with the following information: employee number, last name, first name, and department name.
 
 select department_emp.emp_no as "Employee Number",
-	   employee.last_name as "Last Name",
+       employee.last_name as "Last Name",
        employee.first_name as "First Name",
-	   department.dept_name as "Department Name"
+       department.dept_name as "Department Name"
 from  department,department_emp, employee
 where department.dept_no = department_emp.dept_no  and  department_emp.emp_no = employee.emp_no 
 order by employee.last_name ASC;
@@ -50,9 +50,9 @@ where first_name = 'Hercules' and LEFT(last_name,1) = 'B';
 -- select * from department;
 
 select department_emp.emp_no as "Employee Number",
-	   employee.last_name as "Last Name",
+       employee.last_name as "Last Name",
        employee.first_name as "First Name",
-	   department.dept_name as "Department Name"
+       department.dept_name as "Department Name"
 from  department,department_emp, employee
 where department.dept_no = department_emp.dept_no  and  department_emp.emp_no = employee.emp_no and department.dept_name = 'Sales'	
 order by employee.last_name ASC;
@@ -63,9 +63,9 @@ order by employee.last_name ASC;
 -- select * from department;
 	
 select department_emp.emp_no as "Employee Number",
-	   employee.last_name as "Last Name",
+       employee.last_name as "Last Name",
        employee.first_name as "First Name",
-	   department.dept_name as "Department Name"
+       department.dept_name as "Department Name"
 from  department,department_emp, employee
 where department.dept_no = department_emp.dept_no  and  department_emp.emp_no = employee.emp_no and department.dept_name IN ('Sales','Development')
 order by employee.last_name ASC;
